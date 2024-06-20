@@ -66,7 +66,8 @@ function isVersionGreaterOrEqual(v1, v2) {
             transformedResponse[app.appname][`version${version.v}`] = {
               githubLink: version.githublink || null,
               dockerLink: version.dockerhublink || null,
-              appDescription: version.appdescription || null
+              appDescription: version.appdescription || null,
+              approvedStatus:version.approvedStatus || null
             };
           });
       });
@@ -79,5 +80,5 @@ function isVersionGreaterOrEqual(v1, v2) {
   });
   
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3006;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
